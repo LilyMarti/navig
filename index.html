@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>我的灵动导航 | 简洁聚合页</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <div class="logo-area">
+            <div class="site-title">
+                <h1>✨ 我的导航栈</h1>
+                <div class="badge">聚合 · 直达</div>
+            </div>
+            <div class="toolbar">
+                <button id="themeToggleBtn" class="icon-btn">🌓 暗色模式</button>
+                <button id="layoutToggleBtn" class="icon-btn">📋 列表视图</button>
+            </div>
+        </div>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-box" placeholder="🔍 搜索网站名称、描述或标签..." autocomplete="off">
+        </div>
+    </div>
+
+    <!-- 动态分类导航区域 -->
+    <div id="categoriesContainer" class="categories">
+        <!-- 通过js动态渲染 -->
+        <div class="no-results" style="display: none;">✨ 没有找到相关链接，试试其他关键词吧</div>
+    </div>
+
+    <div class="footer">
+        <p>⚡ 我的专属导航 · 收藏常用站点 | 点击卡片直接访问</p>
+    </div>
+</div>
+<script src="style.js"></script>
+</body>
+</html>
