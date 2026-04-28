@@ -2,33 +2,274 @@
     // ---------- 网站数据 ----------
     // 格式: 分类 | 标题 | 描述 | URL | 图标(emoji或字符)
     const sitesData = [
-        { category: "📌 常用工具", title: "Gmail 邮箱", description: "Google 官方邮箱服务，收发邮件高效办公", url: "https://mail.google.com", icon: "📧" },
-        { category: "📌 常用工具", title: "GitHub", description: "全球开发者社区，托管代码与开源项目", url: "https://github.com", icon: "🐙" },
-        { category: "📌 常用工具", title: "DeepSeek", description: "深度求索 AI 助手，解答问题与创作", url: "https://chat.deepseek.com", icon: "🤖" },
-        { category: "📌 常用工具", title: "Google 翻译", description: "快速翻译多国语言", url: "https://translate.google.com", icon: "🌐" },
-        
-        { category: "🎨 设计灵感", title: "Pinterest", description: "发现创意灵感、设计素材插画", url: "https://www.pinterest.com", icon: "📌" },
-        { category: "🎨 设计灵感", title: "Dribbble", description: "顶尖设计师作品集与潮流设计", url: "https://dribbble.com", icon: "🏀" },
-        { category: "🎨 设计灵感", title: "Figma 社区", description: "UI/UX 设计协作平台，海量资源", url: "https://www.figma.com/community", icon: "🎨" },
-        { category: "🎨 设计灵感", title: "Awwwards", description: "获奖网页设计 showcase", url: "https://www.awwwards.com", icon: "🏆" },
-        { category: "🎨 设计灵感", title: "Chatgpt_signal", description: "获奖网页设计 showcase", url: "https://opennana.com/awesome-prompt-gallery?model=ChatGPT", icon: "🏆" },
-        
-        { category: "📰 资讯阅读", title: "知乎", description: "中文互联网高质量问答社区", url: "https://www.zhihu.com", icon: "❓" },
-        { category: "📰 资讯阅读", title: "Medium", description: "深度优质文章与科技博客", url: "https://medium.com", icon: "📘" },
-        { category: "📰 资讯阅读", title: "Hacker News", description: "科技与创业热点资讯", url: "https://news.ycombinator.com", icon: "💡" },
-        { category: "📰 资讯阅读", title: "豆瓣电影", description: "电影评分与影评社区", url: "https://movie.douban.com", icon: "🎬" },
-        
-        { category: "💻 开发文档", title: "MDN Web Docs", description: "权威前端技术文档与示例", url: "https://developer.mozilla.org", icon: "📄" },
-        { category: "💻 开发文档", title: "Stack Overflow", description: "编程问题解决社区", url: "https://stackoverflow.com", icon: "🧩" },
-        { category: "💻 开发文档", title: "Python 官方", description: "Python 语言参考与教程", url: "https://www.python.org", icon: "🐍" },
-        { category: "💻 开发文档", title: "Vue.js 中文", description: "渐进式框架中文文档", url: "https://cn.vuejs.org", icon: "⚡" },
+      {
+    "category": "📌 常用工具",
+    "title": "Gmail 邮箱",
+    "description": "Google 官方邮箱服务，收发邮件高效办公",
+    "url": "https://mail.google.com",
+    "icon": "📧"
+  },
+  {
+    "category": "📌 常用工具",
+    "title": "GitHub",
+    "description": "全球开发者社区，托管代码与开源项目",
+    "url": "https://github.com",
+    "icon": "🐙"
+  },
+  {
+    "category": "📌 常用工具",
+    "title": "DeepSeek",
+    "description": "深度求索 AI 助手，解答问题与创作",
+    "url": "https://chat.deepseek.com",
+    "icon": "🤖"
+  },
+  {
+    "category": "📌 常用工具",
+    "title": "Google 翻译",
+    "description": "快速翻译多国语言",
+    "url": "https://translate.google.com",
+    "icon": "🌐"
+  },
+  {
+    "category": "🎨 设计灵感",
+    "title": "Pinterest",
+    "description": "发现创意灵感、设计素材插画",
+    "url": "https://www.pinterest.com",
+    "icon": "📌"
+  },
+  {
+    "category": "🎨 设计灵感",
+    "title": "Dribbble",
+    "description": "顶尖设计师作品集与潮流设计",
+    "url": "https://dribbble.com",
+    "icon": "🏀"
+  },
+  {
+    "category": "🎨 设计灵感",
+    "title": "Figma 社区",
+    "description": "UI/UX 设计协作平台，海量资源",
+    "url": "https://www.figma.com/community",
+    "icon": "🎨"
+  },
+  {
+    "category": "🎨 设计灵感",
+    "title": "Awwwards",
+    "description": "获奖网页设计 showcase",
+    "url": "https://www.awwwards.com",
+    "icon": "🏆"
+  },
+  {
+    "category": "🎨 设计灵感",
+    "title": "Chatgpt_signal",
+    "description": "获奖网页设计 showcase",
+    "url": "https://opennana.com/awesome-prompt-gallery?model=ChatGPT",
+    "icon": "🏆"
+  },
+  {
+    "category": "📰 资讯阅读",
+    "title": "知乎",
+    "description": "中文互联网高质量问答社区",
+    "url": "https://www.zhihu.com",
+    "icon": "❓"
+  },
+  {
+    "category": "📰 资讯阅读",
+    "title": "Medium",
+    "description": "深度优质文章与科技博客",
+    "url": "https://medium.com",
+    "icon": "📘"
+  },
+  {
+    "category": "📰 资讯阅读",
+    "title": "Hacker News",
+    "description": "科技与创业热点资讯",
+    "url": "https://news.ycombinator.com",
+    "icon": "💡"
+  },
+  {
+    "category": "📰 资讯阅读",
+    "title": "豆瓣电影",
+    "description": "电影评分与影评社区",
+    "url": "https://movie.douban.com",
+    "icon": "🎬"
+  },
+  {
+    "category": "💻 开发文档",
+    "title": "MDN Web Docs",
+    "description": "权威前端技术文档与示例",
+    "url": "https://developer.mozilla.org",
+    "icon": "📄"
+  },
+  {
+    "category": "💻 开发文档",
+    "title": "Stack Overflow",
+    "description": "编程问题解决社区",
+    "url": "https://stackoverflow.com",
+    "icon": "🧩"
+  },
+  {
+    "category": "💻 开发文档",
+    "title": "Python 官方",
+    "description": "Python 语言参考与教程",
+    "url": "https://www.python.org",
+    "icon": "🐍"
+  },
+  {
+    "category": "💻 开发文档",
+    "title": "Vue.js 中文",
+    "description": "渐进式框架中文文档",
+    "url": "https://cn.vuejs.org",
+    "icon": "⚡"
+  },
+  {
+    "category": "🎮 娱乐影音",
+    "title": "YouTube",
+    "description": "全球视频分享平台, 学习娱乐",
+    "url": "https://www.youtube.com",
+    "icon": "📺"
+  },
+  {
+    "category": "🎮 娱乐影音",
+    "title": "Spotify",
+    "description": "海量音乐与播客流媒体",
+    "url": "https://open.spotify.com",
+    "icon": "🎵"
+  },
+  {
+    "category": "🎮 娱乐影音",
+    "title": "Bilibili",
+    "description": "国内知名二次元弹幕视频站",
+    "url": "https://www.bilibili.com",
+    "icon": "📡"
+  },
+  {
+    "category": "🎮 娱乐影音",
+    "title": "gequhai",
+    "description": "音乐下载网站",
+    "url": "https://www.gequhai.com",
+    "icon": "🎵"
+  },
+  {
+    "category": "🎮 娱乐影音",
+    "title": "yinwe",
+    "description": "流行在线听歌网站",
+    "url": "https://www.yinwe.com/top",
+    "icon": "🎵"
+  },
+  {
+    "category": "常用导航",
+    "title": "Tbox",
+    "description": "Tbox导航",
+    "url": "https://www.tboxn.com/",
+    "icon": "🧭"
+  },
+  {
+    "category": "常用导航",
+    "title": "爱达杂货铺",
+    "description": "爱达杂货铺",
+    "url": "https://adzhp.cc",
+    "icon": "🧭"
+  },
+  {
+    "category": "编程学习",
+    "title": "菜鸟教程",
+    "description": "编程学习网站",
+    "url": "https://www.runoob.com/",
+    "icon": "👩🏾‍💻"
+  },
+  {
+    "category": "编程学习",
+    "title": "w3school",
+    "description": "编程学习网站",
+    "url": "https://www.w3school.com.cn/",
+    "icon": "👩🏾‍💻"
+  },
+  {
+    "category": "🎥影视娱乐",
+    "title": "monket",
+    "description": "猴子影视",
+    "url": "https://monkey-flix.com/",
+    "icon": "🎵"
+  },
+  {
+    "category": "🎥影视娱乐",
+    "title": "hhkan0",
+    "description": "好好看",
+    "url": "https://www.hhkan0.com/",
+    "icon": "🎞️"
+  },
+  {
+    "category": "🎥影视娱乐",
+    "title": "kele影视导航",
+    "description": "kele影视导航",
+    "url": "https://www.klyingshi4.com/",
+    "icon": "🎞️"
+  },
+  {
+    "category": "外语学习",
+    "title": "letmeenglish",
+    "description": "letmeenglish",
+    "url": "https://letmeenglish.com/",
+    "icon": "🔖"
+  },
+  {
+    "category": "外语学习",
+    "title": "quwertlearner",
+    "description": "letmeenglish",
+    "url": "https://qwerty.kaiyi.cool/",
+    "icon": "📜"
+  },
+  {
+    "category": "🧰工具导航",
+    "title": "证件照格式修改",
+    "description": "证件照一站式搞定",
+    "url": "https://uutool.cn",
+    "icon": "👔"
+  },
+  {
+    "category": "🧰工具导航",
+    "title": "mermaid流图图",
+    "description": "uutool",
+    "url": "https://www.min2k.com/tools/mermaid/",
+    "icon": "📉"
+  },
+  {
+    "category": "🧰工具导航",
+    "title": "ai导航",
+    "description": "ai-kit",
+    "url": "https://ai-kit.cn/",
+    "icon": "🥽"
+  },
+  {
+    "category": "🧰工具导航",
+    "title": "gamma",
+    "description": "使用提示词快速生成高质量ppt",
+    "url": "https://gamma.app/zh-cn",
+    "icon": "🎵"
+  },
+  {
+    "category": "🔍资源搜索",
+    "title": "AnyBt",
+    "description": "海里种子资源搜索",
+    "url": "https://anybt.eth.link/#/",
+    "icon": "📇"
+  },
+  {
+    "category": "🔍资源搜索",
+    "title": "海搜",
+    "description": "聚合成千上万的学习文档，涵盖中小学，考研、考公等资料",
+    "url": "https://haisou.cc/",
+    "icon": "📇"
+  },
+  {
+    "category": "🏛️国家政务信息公示",
+    "title": "国家政务信息公示网",
+    "description": "国家政务服务信息公示查询",
+    "url": "https://gx.gsxt.gov.cn/",
+    "icon": "🏡"
+  }
 
-        { category: "🎮 娱乐影音", title: "YouTube", description: "全球视频分享平台, 学习娱乐", url: "https://www.youtube.com", icon: "📺" },
-        { category: "🎮 娱乐影音", title: "Spotify", description: "海量音乐与播客流媒体", url: "https://open.spotify.com", icon: "🎵" },
-        { category: "🎮 娱乐影音", title: "Bilibili", description: "国内知名二次元弹幕视频站", url: "https://www.bilibili.com", icon: "📡" },
-        { category: "🎮 娱乐影音", title: "gequhai", description: "音乐下载网站", url: "https://www.gequhai.com", icon: "🎵" },
-        { category: "🎮 娱乐影音", title: "yinwe", description: "流行在线听歌网站", url: "https://www.yinwe.com/top", icon: "🎵" },
-       
+
        
 
     ];
