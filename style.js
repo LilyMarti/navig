@@ -1,321 +1,83 @@
-
-    // ---------- 网站数据 ----------
-    // 格式: 分类 | 标题 | 描述 | URL | 图标(emoji或字符)
+  // ---------- 网站数据 ----------
     const sitesData = [
-      {
-    "category": "📌 常用工具",
-    "title": "Gmail 邮箱",
-    "description": "Google 官方邮箱服务，收发邮件高效办公",
-    "url": "https://mail.google.com",
-    "icon": "📧"
-  },
-  {
-    "category": "📌 常用工具",
-    "title": "GitHub",
-    "description": "全球开发者社区，托管代码与开源项目",
-    "url": "https://github.com",
-    "icon": "🐙"
-  },
-  {
-    "category": "📌 常用工具",
-    "title": "DeepSeek",
-    "description": "深度求索 AI 助手，解答问题与创作",
-    "url": "https://chat.deepseek.com",
-    "icon": "🤖"
-  },
-  {
-    "category": "📌 常用工具",
-    "title": "Google 翻译",
-    "description": "快速翻译多国语言",
-    "url": "https://translate.google.com",
-    "icon": "🌐"
-  },
-  {
-    "category": "🎨 设计灵感",
-    "title": "Pinterest",
-    "description": "发现创意灵感、设计素材插画",
-    "url": "https://www.pinterest.com",
-    "icon": "📌"
-  },
-  {
-    "category": "🎨 设计灵感",
-    "title": "Dribbble",
-    "description": "顶尖设计师作品集与潮流设计",
-    "url": "https://dribbble.com",
-    "icon": "🏀"
-  },
-  {
-    "category": "🎨 设计灵感",
-    "title": "Figma 社区",
-    "description": "UI/UX 设计协作平台，海量资源",
-    "url": "https://www.figma.com/community",
-    "icon": "🎨"
-  },
-  {
-    "category": "🎨 设计灵感",
-    "title": "Awwwards",
-    "description": "获奖网页设计 showcase",
-    "url": "https://www.awwwards.com",
-    "icon": "🏆"
-  },
-  {
-    "category": "🎨 设计灵感",
-    "title": "Chatgpt_signal",
-    "description": "获奖网页设计 showcase",
-    "url": "https://opennana.com/awesome-prompt-gallery?model=ChatGPT",
-    "icon": "🏆"
-  },
-  {
-    "category": "📰 资讯阅读",
-    "title": "知乎",
-    "description": "中文互联网高质量问答社区",
-    "url": "https://www.zhihu.com",
-    "icon": "❓"
-  },
-  {
-    "category": "📰 资讯阅读",
-    "title": "Medium",
-    "description": "深度优质文章与科技博客",
-    "url": "https://medium.com",
-    "icon": "📘"
-  },
-  {
-    "category": "📰 资讯阅读",
-    "title": "Hacker News",
-    "description": "科技与创业热点资讯",
-    "url": "https://news.ycombinator.com",
-    "icon": "💡"
-  },
-  {
-    "category": "📰 资讯阅读",
-    "title": "豆瓣电影",
-    "description": "电影评分与影评社区",
-    "url": "https://movie.douban.com",
-    "icon": "🎬"
-  },
-  {
-    "category": "💻 开发文档",
-    "title": "MDN Web Docs",
-    "description": "权威前端技术文档与示例",
-    "url": "https://developer.mozilla.org",
-    "icon": "📄"
-  },
-  {
-    "category": "💻 开发文档",
-    "title": "Stack Overflow",
-    "description": "编程问题解决社区",
-    "url": "https://stackoverflow.com",
-    "icon": "🧩"
-  },
-  {
-    "category": "💻 开发文档",
-    "title": "Python 官方",
-    "description": "Python 语言参考与教程",
-    "url": "https://www.python.org",
-    "icon": "🐍"
-  },
-  {
-    "category": "💻 开发文档",
-    "title": "Vue.js 中文",
-    "description": "渐进式框架中文文档",
-    "url": "https://cn.vuejs.org",
-    "icon": "⚡"
-  },
-  {
-    "category": "🎮 娱乐影音",
-    "title": "YouTube",
-    "description": "全球视频分享平台, 学习娱乐",
-    "url": "https://www.youtube.com",
-    "icon": "📺"
-  },
-  {
-    "category": "🎮 娱乐影音",
-    "title": "Spotify",
-    "description": "海量音乐与播客流媒体",
-    "url": "https://open.spotify.com",
-    "icon": "🎵"
-  },
-  {
-    "category": "🎮 娱乐影音",
-    "title": "Bilibili",
-    "description": "国内知名二次元弹幕视频站",
-    "url": "https://www.bilibili.com",
-    "icon": "📡"
-  },
-  {
-    "category": "🎮 娱乐影音",
-    "title": "gequhai",
-    "description": "音乐下载网站",
-    "url": "https://www.gequhai.com",
-    "icon": "🎵"
-  },
-  {
-    "category": "🎮 娱乐影音",
-    "title": "yinwe",
-    "description": "流行在线听歌网站",
-    "url": "https://www.yinwe.com/top",
-    "icon": "🎵"
-  },
-  {
-    "category": "常用导航",
-    "title": "Tbox",
-    "description": "Tbox导航",
-    "url": "https://www.tboxn.com/",
-    "icon": "🧭"
-  },
-  {
-    "category": "常用导航",
-    "title": "爱达杂货铺",
-    "description": "爱达杂货铺",
-    "url": "https://adzhp.cc",
-    "icon": "🧭"
-  },
-  {
-    "category": "编程学习",
-    "title": "菜鸟教程",
-    "description": "编程学习网站",
-    "url": "https://www.runoob.com/",
-    "icon": "👩🏾‍💻"
-  },
-  {
-    "category": "编程学习",
-    "title": "w3school",
-    "description": "编程学习网站",
-    "url": "https://www.w3school.com.cn/",
-    "icon": "👩🏾‍💻"
-  },
-  {
-    "category": "🎥影视娱乐",
-    "title": "monket",
-    "description": "猴子影视",
-    "url": "https://monkey-flix.com/",
-    "icon": "🎵"
-  },
-  {
-    "category": "🎥影视娱乐",
-    "title": "hhkan0",
-    "description": "好好看",
-    "url": "https://www.hhkan0.com/",
-    "icon": "🎞️"
-  },
-  {
-    "category": "🎥影视娱乐",
-    "title": "kele影视导航",
-    "description": "kele影视导航",
-    "url": "https://www.klyingshi4.com/",
-    "icon": "🎞️"
-  },
-  {
-    "category": "外语学习",
-    "title": "letmeenglish",
-    "description": "letmeenglish",
-    "url": "https://letmeenglish.com/",
-    "icon": "🔖"
-  },
-  {
-    "category": "外语学习",
-    "title": "quwertlearner",
-    "description": "letmeenglish",
-    "url": "https://qwerty.kaiyi.cool/",
-    "icon": "📜"
-  },
-  {
-    "category": "🧰工具导航",
-    "title": "证件照格式修改",
-    "description": "证件照一站式搞定",
-    "url": "https://uutool.cn",
-    "icon": "👔"
-  },
-  {
-    "category": "🧰工具导航",
-    "title": "mermaid流图图",
-    "description": "uutool",
-    "url": "https://www.min2k.com/tools/mermaid/",
-    "icon": "📉"
-  },
-  {
-    "category": "🧰工具导航",
-    "title": "ai导航",
-    "description": "ai-kit",
-    "url": "https://ai-kit.cn/",
-    "icon": "🥽"
-  },
-  {
-    "category": "🧰工具导航",
-    "title": "gamma",
-    "description": "使用提示词快速生成高质量ppt",
-    "url": "https://gamma.app/zh-cn",
-    "icon": "🎵"
-  },
-  {
-    "category": "🔍资源搜索",
-    "title": "AnyBt",
-    "description": "海里种子资源搜索",
-    "url": "https://anybt.eth.link/#/",
-    "icon": "📇"
-  },
-  {
-    "category": "🔍资源搜索",
-    "title": "海搜",
-    "description": "聚合成千上万的学习文档，涵盖中小学，考研、考公等资料",
-    "url": "https://haisou.cc/",
-    "icon": "📇"
-  },
-  {
-    "category": "🏛️国家政务信息公示",
-    "title": "国家政务信息公示网",
-    "description": "国家政务服务信息公示查询",
-    "url": "https://gx.gsxt.gov.cn/",
-    "icon": "🏡"
-  }
-
-
-       
-
+        { "category": "📌 常用工具", "title": "Gmail 邮箱", "description": "Google 官方邮箱服务，收发邮件高效办公", "url": "https://mail.google.com", "icon": "📧" },
+        { "category": "📌 常用工具", "title": "GitHub", "description": "全球开发者社区，托管代码与开源项目", "url": "https://github.com", "icon": "🐙" },
+        { "category": "📌 常用工具", "title": "DeepSeek", "description": "深度求索 AI 助手，解答问题与创作", "url": "https://chat.deepseek.com", "icon": "🤖" },
+        { "category": "📌 常用工具", "title": "Google 翻译", "description": "快速翻译多国语言", "url": "https://translate.google.com", "icon": "🌐" },
+        { "category": "🎨 设计灵感", "title": "Pinterest", "description": "发现创意灵感、设计素材插画", "url": "https://www.pinterest.com", "icon": "📌" },
+        { "category": "🎨 设计灵感", "title": "Dribbble", "description": "顶尖设计师作品集与潮流设计", "url": "https://dribbble.com", "icon": "🏀" },
+        { "category": "🎨 设计灵感", "title": "Figma 社区", "description": "UI/UX 设计协作平台，海量资源", "url": "https://www.figma.com/community", "icon": "🎨" },
+        { "category": "🎨 设计灵感", "title": "Awwwards", "description": "获奖网页设计 showcase", "url": "https://www.awwwards.com", "icon": "🏆" },
+        { "category": "🎨 设计灵感", "title": "Chatgpt_signal", "description": "获奖网页设计 showcase", "url": "https://opennana.com/awesome-prompt-gallery?model=ChatGPT", "icon": "🏆" },
+        { "category": "📰 资讯阅读", "title": "知乎", "description": "中文互联网高质量问答社区", "url": "https://www.zhihu.com", "icon": "❓" },
+        { "category": "📰 资讯阅读", "title": "Medium", "description": "深度优质文章与科技博客", "url": "https://medium.com", "icon": "📘" },
+        { "category": "📰 资讯阅读", "title": "Hacker News", "description": "科技与创业热点资讯", "url": "https://news.ycombinator.com", "icon": "💡" },
+        { "category": "📰 资讯阅读", "title": "豆瓣电影", "description": "电影评分与影评社区", "url": "https://movie.douban.com", "icon": "🎬" },
+        { "category": "💻 开发文档", "title": "MDN Web Docs", "description": "权威前端技术文档与示例", "url": "https://developer.mozilla.org", "icon": "📄" },
+        { "category": "💻 开发文档", "title": "Stack Overflow", "description": "编程问题解决社区", "url": "https://stackoverflow.com", "icon": "🧩" },
+        { "category": "💻 开发文档", "title": "Python 官方", "description": "Python 语言参考与教程", "url": "https://www.python.org", "icon": "🐍" },
+        { "category": "💻 开发文档", "title": "Vue.js 中文", "description": "渐进式框架中文文档", "url": "https://cn.vuejs.org", "icon": "⚡" },
+        { "category": "🎮 娱乐影音", "title": "YouTube", "description": "全球视频分享平台, 学习娱乐", "url": "https://www.youtube.com", "icon": "📺" },
+        { "category": "🎮 娱乐影音", "title": "Spotify", "description": "海量音乐与播客流媒体", "url": "https://open.spotify.com", "icon": "🎵" },
+        { "category": "🎮 娱乐影音", "title": "Bilibili", "description": "国内知名二次元弹幕视频站", "url": "https://www.bilibili.com", "icon": "📡" },
+        { "category": "🎮 娱乐影音", "title": "gequhai", "description": "音乐下载网站", "url": "https://www.gequhai.com", "icon": "🎵" },
+        { "category": "🎮 娱乐影音", "title": "yinwe", "description": "流行在线听歌网站", "url": "https://www.yinwe.com/top", "icon": "🎵" },
+        { "category": "常用导航", "title": "Tbox", "description": "Tbox导航", "url": "https://www.tboxn.com/", "icon": "🧭" },
+        { "category": "常用导航", "title": "爱达杂货铺", "description": "爱达杂货铺", "url": "https://adzhp.cc", "icon": "🧭" },
+        { "category": "编程学习", "title": "菜鸟教程", "description": "编程学习网站", "url": "https://www.runoob.com/", "icon": "👩🏾‍💻" },
+        { "category": "编程学习", "title": "w3school", "description": "编程学习网站", "url": "https://www.w3school.com.cn/", "icon": "👩🏾‍💻" },
+        { "category": "🎥影视娱乐", "title": "monket", "description": "猴子影视", "url": "https://monkey-flix.com/", "icon": "🎵" },
+        { "category": "🎥影视娱乐", "title": "hhkan0", "description": "好好看", "url": "https://www.hhkan0.com/", "icon": "🎞️" },
+        { "category": "🎥影视娱乐", "title": "kele影视导航", "description": "kele影视导航", "url": "https://www.klyingshi4.com/", "icon": "🎞️" },
+        { "category": "外语学习", "title": "letmeenglish", "description": "letmeenglish", "url": "https://letmeenglish.com/", "icon": "🔖" },
+        { "category": "外语学习", "title": "quwertlearner", "description": "letmeenglish", "url": "https://qwerty.kaiyi.cool/", "icon": "📜" },
+        { "category": "🧰工具导航", "title": "证件照格式修改", "description": "证件照一站式搞定", "url": "https://uutool.cn", "icon": "👔" },
+        { "category": "🧰工具导航", "title": "mermaid流图图", "description": "uutool", "url": "https://www.min2k.com/tools/mermaid/", "icon": "📉" },
+        { "category": "🧰工具导航", "title": "ai导航", "description": "ai-kit", "url": "https://ai-kit.cn/", "icon": "🥽" },
+        { "category": "🧰工具导航", "title": "gamma", "description": "使用提示词快速生成高质量ppt", "url": "https://gamma.app/zh-cn", "icon": "🎵" },
+        { "category": "🔍资源搜索", "title": "AnyBt", "description": "海里种子资源搜索", "url": "https://anybt.eth.link/#/", "icon": "📇" },
+        { "category": "🔍资源搜索", "title": "海搜", "description": "聚合成千上万的学习文档，涵盖中小学，考研、考公等资料", "url": "https://haisou.cc/", "icon": "📇" },
+        { "category": "🏛️国家政务信息公示", "title": "国家政务信息公示网", "description": "国家政务服务信息公示查询", "url": "https://gx.gsxt.gov.cn/", "icon": "🏡" }
     ];
 
-    // 预定义分类顺序 (可扩展)
-    const categoryOrder = ["📌 常用工具", "🎨 设计灵感", "📰 资讯阅读", "💻 开发文档", "🎮 娱乐影音","常用导航"];
+    // 预定义分类顺序
+    const categoryOrder = ["📌 常用工具", "🎨 设计灵感", "📰 资讯阅读", "💻 开发文档", "🎮 娱乐影音", "常用导航", "编程学习", "🎥影视娱乐", "外语学习", "🧰工具导航", "🔍资源搜索", "🏛️国家政务信息公示"];
 
-    // 辅助函数: 重新组织分类数据
-    function buildCategoryMap(data) {
-        const map = new Map();
-        for (const item of data) {
-            const cat = item.category;
-            if (!map.has(cat)) map.set(cat, []);
-            map.get(cat).push(item);
-        }
-        // 按自定义顺序返回数组
-        const sortedCategories = [];
-        for (const key of categoryOrder) {
-            if (map.has(key)) {
-                sortedCategories.push({ name: key, items: map.get(key) });
-                map.delete(key);
-            }
-        }
-        // 剩余未在order中的分类追加到后面
-        for (const [name, items] of map.entries()) {
-            sortedCategories.push({ name, items });
-        }
-        return sortedCategories;
-    }
-
-    // 全局变量
     let currentSearchKeyword = '';
-    let isListView = false;      // 列表/网格模式
-    let isDarkMode = false;      // 暗色主题
+    let isListView = false;
+    let isDarkMode = false;
+    let originalSites = [...sitesData];
 
-    // DOM 元素
     const categoriesContainer = document.getElementById('categoriesContainer');
     const searchInput = document.getElementById('searchInput');
     const themeBtn = document.getElementById('themeToggleBtn');
     const layoutBtn = document.getElementById('layoutToggleBtn');
     const noResultDiv = document.querySelector('.no-results');
 
-    // 存储原始完整数据用于搜索过滤
-    let originalSites = [...sitesData];
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str.replace(/[&<>]/g, function(m) {
+            if (m === '&') return '&amp;';
+            if (m === '<') return '&lt;';
+            if (m === '>') return '&gt;';
+            return m;
+        });
+    }
 
-    // 根据关键词过滤数据
+    function truncateUrl(url) {
+        try {
+            let host = new URL(url).hostname;
+            if (host.length > 30) return host.substring(0, 27) + '...';
+            return host;
+        } catch(e) {
+            return url.length > 35 ? url.substring(0, 32) + '...' : url;
+        }
+    }
+
+    function slugify(str) {
+        return str.replace(/\s+/g, '-').replace(/[^\w\u4e00-\u9fa5-]/g, '').slice(0, 30);
+    }
+
     function filterSitesByKeyword(keyword) {
         if (!keyword.trim()) return [...originalSites];
         const kw = keyword.trim().toLowerCase();
@@ -327,27 +89,23 @@
         );
     }
 
-    // 渲染：基于当前关键词，生成过滤后数据，构建分类展示
+    // 核心渲染主内容
     function render() {
         const filtered = filterSitesByKeyword(currentSearchKeyword);
-        
         if (filtered.length === 0) {
             categoriesContainer.innerHTML = '';
             noResultDiv.style.display = 'block';
             categoriesContainer.appendChild(noResultDiv);
+            updateCatalog([]);
             return;
         }
         noResultDiv.style.display = 'none';
-        
-        // 根据过滤后数据构建分类映射
         const categoryMap = new Map();
         for (const item of filtered) {
             const cat = item.category;
             if (!categoryMap.has(cat)) categoryMap.set(cat, []);
             categoryMap.get(cat).push(item);
         }
-        
-        // 按照固定顺序排序分类 (保留原有顺序但仅呈现存在的)
         const orderedCategories = [];
         for (const key of categoryOrder) {
             if (categoryMap.has(key)) {
@@ -358,79 +116,75 @@
         for (const [name, items] of categoryMap.entries()) {
             orderedCategories.push({ name, items });
         }
-        
-        // 开始生成HTML
         let html = '';
-        // 在 render 函数中，生成 html 的地方
-for (const cat of orderedCategories) {
-    const itemCount = cat.items.length;
-    // 生成唯一且安全的 id (基于分类名称)
-    const safeId = cat.name
-        .replace(/[^\w\u4e00-\u9fa5]/g, '-')  // 非字母数字中文替换为 -
-        .replace(/-+/g, '-')                  // 多个 - 合并
-        .replace(/^-|-$/g, '')                // 去掉首尾 -
-        .toLowerCase();
-    const categoryId = `cat-${safeId}`;
-    
-    html += `
-        <div class="category" id="${categoryId}" data-category="${escapeHtml(cat.name)}">
-            <div class="category-header">
-                <div class="category-title">
-                    <a href="#${categoryId}" class="anchor-link" title="跳转到此分类">🔗</a>
-                    ${escapeHtml(cat.name)} <span>${itemCount}</span>
+        for (const cat of orderedCategories) {
+            const safeId = cat.name.replace(/[^\w\u4e00-\u9fa5]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+            const categoryId = `cat-${safeId}`;
+            html += `<div class="category" id="${categoryId}" data-category="${escapeHtml(cat.name)}">
+                <div class="category-header">
+                    <div class="category-title">
+                        <a href="#${categoryId}" class="anchor-link" title="跳转到此分类">🔗</a>
+                        ${escapeHtml(cat.name)} <span>${cat.items.length}</span>
+                    </div>
+                    <div class="count-badge">${cat.items.length}个站点</div>
                 </div>
-                <div class="count-badge">${itemCount}个站点</div>
-            </div>
-            <div class="card-grid" id="grid-${slugify(cat.name)}">
-    `;
-    for (const site of cat.items) {
-        html += `
-            <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" class="nav-card">
-                <div class="card-icon">${escapeHtml(site.icon) || '🔗'}</div>
-                <div class="card-title">${escapeHtml(site.title)}</div>
-                <div class="card-desc">${escapeHtml(site.description)}</div>
-                <div class="card-url">${truncateUrl(site.url)}</div>
-            </a>
-        `;
-    }
-    html += `</div></div>`;
-}
+                <div class="card-grid" id="grid-${slugify(cat.name)}">`;
+            for (const site of cat.items) {
+                html += `<a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" class="nav-card">
+                    <div class="card-icon">${escapeHtml(site.icon) || '🔗'}</div>
+                    <div class="card-title">${escapeHtml(site.title)}</div>
+                    <div class="card-desc">${escapeHtml(site.description)}</div>
+                    <div class="card-url">${truncateUrl(site.url)}</div>
+                </a>`;
+            }
+            html += `</div></div>`;
+        }
         categoriesContainer.innerHTML = html;
-        
-        // 如果当前是列表视图模式，追加类名到body
-        // 我们不需要重复添加类，采用统一在渲染之后设置body类
         applyLayoutClass();
+        // 更新側边栏目录 (基于当前过滤后的分类)
+        updateCatalog(orderedCategories);
     }
-    
-    // 辅助转义HTML
-    function escapeHtml(str) {
-        if (!str) return '';
-        return str.replace(/[&<>]/g, function(m) {
-            if (m === '&') return '&amp;';
-            if (m === '<') return '&lt;';
-            if (m === '>') return '&gt;';
-            return m;
-        }).replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, function(c) {
-            return c;
+
+    // 侧边栏目录渲染 (无功能按钮，纯粹目录)
+    function updateCatalog(categoriesList) {
+        const catalogContainer = document.getElementById('catalogContainer');
+        if (!catalogContainer) return;
+        if (!categoriesList.length) {
+            catalogContainer.innerHTML = '<div style="padding:20px; text-align:center;">✨ 暂无分类</div>';
+            return;
+        }
+        let catHtml = '';
+        for (const cat of categoriesList) {
+            const safeId = cat.name.replace(/[^\w\u4e00-\u9fa5]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '').toLowerCase();
+            const elementId = `cat-${safeId}`;
+            catHtml += `<div class="catalog-item">
+                <div class="nav-catalog-item" data-target-id="${elementId}">
+                    <span class="catalog-icon">📁</span>
+                    <span class="catalog-name">${escapeHtml(cat.name)}</span>
+                    <span class="catalog-count">${cat.items.length}</span>
+                </div>
+                <div class="catalog-sub">${cat.items.length} 个站点</div>
+            </div>`;
+        }
+        catalogContainer.innerHTML = catHtml;
+        // 绑定点击滚动定位
+        document.querySelectorAll('.nav-catalog-item').forEach(el => {
+            el.addEventListener('click', (e) => {
+                const targetId = el.getAttribute('data-target-id');
+                if (targetId) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        // 关闭侧边栏
+                        closeSidebar();
+                    } else {
+                        console.warn('未找到元素', targetId);
+                    }
+                }
+            });
         });
     }
-    
-    // 简短URL显示
-    function truncateUrl(url) {
-        try {
-            let host = new URL(url).hostname;
-            if (host.length > 30) return host.substring(0, 27) + '...';
-            return host;
-        } catch(e) {
-            return url.length > 35 ? url.substring(0, 32) + '...' : url;
-        }
-    }
-    
-    function slugify(str) {
-        return str.replace(/\s+/g, '-').replace(/[^\w\u4e00-\u9fa5-]/g, '').slice(0, 30);
-    }
-    
-    // 处理布局模式 (全局类名 list-view 控制)
+
     function applyLayoutClass() {
         if (isListView) {
             document.body.classList.add('list-view');
@@ -440,8 +194,7 @@ for (const cat of orderedCategories) {
             layoutBtn.innerHTML = '📋 列表视图';
         }
     }
-    
-    // 主题切换
+
     function setTheme(dark) {
         if (dark) {
             document.body.classList.add('dark');
@@ -453,186 +206,53 @@ for (const cat of orderedCategories) {
         localStorage.setItem('navThemeDark', dark ? 'true' : 'false');
         isDarkMode = dark;
     }
-    
-    function toggleTheme() {
-        setTheme(!isDarkMode);
-    }
-    
+
+    function toggleTheme() { setTheme(!isDarkMode); }
     function toggleLayout() {
         isListView = !isListView;
         applyLayoutClass();
-        // 因为卡片布局类只影响css样式，但网格还是flex改变，我们需要重新渲染确保list类正确挂载，但已有的类直接控制css，只需更新btn文本无需重绘。但以防某些浏览器突变，重新调用render可保留同样内容
-        // 但重新渲染会重置dom？但从性能及保持状态来说已经通过 class 控制，不重新渲染也完美工作，但因为card-grid内容没有变化，只用样式切换。
-        // 为了让按钮状态同步，只需应用类即可, 已经调用applyLayoutClass。无需重新生成数据，完美。
-        // 但是先前的卡片样式是grid，通过.list-view .card-grid来变成flex列，所以不需要再render。OK
-        // 我们再保存一下布局偏好
         localStorage.setItem('navLayoutList', isListView ? 'true' : 'false');
     }
-    
-    // 搜索输入事件处理
+
     function onSearchInput(e) {
         currentSearchKeyword = e.target.value;
         render();
     }
-    
-    // 初始化加载偏好
+
     function loadPreferences() {
         const savedTheme = localStorage.getItem('navThemeDark');
-        if (savedTheme === 'true') {
-            isDarkMode = true;
-            setTheme(true);
-        } else {
-            isDarkMode = false;
-            setTheme(false);
-        }
+        if (savedTheme === 'true') setTheme(true);
+        else setTheme(false);
         const savedLayout = localStorage.getItem('navLayoutList');
-        if (savedLayout === 'true') {
-            isListView = true;
-        } else {
-            isListView = false;
-        }
+        isListView = savedLayout === 'true';
         applyLayoutClass();
     }
 
-    // 侧边栏相关功能
-function initSidebar() {
-    const trigger = document.getElementById('sidebarTrigger');
-    const panel = document.getElementById('sidebarPanel');
-    const overlay = document.getElementById('sidebarOverlay');
-    const closeBtn = document.getElementById('closeSidebar');
-    
-    // 打开侧边栏
+    // 侧边栏交互 (纯目录)
+    const sidebarTrigger = document.getElementById('sidebarTrigger');
+    const sidebarPanel = document.getElementById('sidebarPanel');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const closeSidebarBtn = document.getElementById('closeSidebar');
+
     function openSidebar() {
-        panel.classList.add('open');
-        overlay.classList.add('show');
+        sidebarPanel.classList.add('open');
+        sidebarOverlay.classList.add('show');
         document.body.style.overflow = 'hidden';
     }
-    
-    // 关闭侧边栏
     function closeSidebar() {
-        panel.classList.remove('open');
-        overlay.classList.remove('show');
+        sidebarPanel.classList.remove('open');
+        sidebarOverlay.classList.remove('show');
         document.body.style.overflow = '';
     }
-    
-    // 绑定事件
-    if (trigger) {
-        trigger.addEventListener('click', openSidebar);
-    }
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeSidebar);
-    }
-    
-    if (overlay) {
-        overlay.addEventListener('click', closeSidebar);
-    }
-    
-    // 功能按钮的点击事件
-    const funcBtns = document.querySelectorAll('.func-btn');
-    funcBtns.forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            const action = this.getAttribute('data-action');
-            handleFunctionAction(action);
-            closeSidebar(); // 执行操作后自动关闭侧边栏（可选）
-        });
-    });
-}
+    if (sidebarTrigger) sidebarTrigger.addEventListener('click', openSidebar);
+    if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', closeSidebar);
 
-// 处理各个功能模块的具体逻辑
-function handleFunctionAction(action) {
-    switch(action) {
-        case 'bookmark':
-            alert('📖 书签管理功能开发中...\n可以在这里添加收藏当前页面等功能');
-            break;
-        case 'export':
-            exportLinks();
-            break;
-        case 'import':
-            importLinks();
-            break;
-        case 'clear':
-            if(confirm('确定要清除所有本地缓存数据吗？')) {
-                localStorage.clear();
-                alert('缓存已清除，页面将刷新');
-                location.reload();
-            }
-            break;
-        case 'stats':
-            showStats();
-            break;
-        default:
-            console.log('未知功能:', action);
-    }
-}
-
-// 导出链接功能
-function exportLinks() {
-    const data = JSON.stringify(originalSites, null, 2);
-    const blob = new Blob([data], {type: 'application/json'});
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `navigation-links-${new Date().toISOString().slice(0,19)}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-    alert('✅ 链接已导出为JSON文件');
-}
-
-// 导入链接功能
-function importLinks() {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json';
-    input.onchange = (e) => {
-        const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            try {
-                const imported = JSON.parse(event.target.result);
-                if(Array.isArray(imported)) {
-                    // 合并导入的数据（去重基于url）
-                    const existingUrls = new Set(originalSites.map(s => s.url));
-                    const newSites = imported.filter(site => !existingUrls.has(site.url));
-                    originalSites.push(...newSites);
-                    // 重新渲染
-                    render();
-                    alert(`✅ 成功导入 ${newSites.length} 个新链接！`);
-                } else {
-                    alert('❌ 文件格式错误：需要数组格式');
-                }
-            } catch(err) {
-                alert('❌ 解析失败：无效的JSON文件');
-            }
-        };
-        reader.readAsText(file);
-    };
-    input.click();
-}
-
-// 显示统计信息
-function showStats() {
-    const total = originalSites.length;
-    const categories = new Set(originalSites.map(s => s.category));
-    const stats = `📊 使用统计\n\n总链接数：${total} 个\n分类数量：${categories.size} 个\n\n分类详情：\n${Array.from(categories).map(cat => {
-        const count = originalSites.filter(s => s.category === cat).length;
-        return `  • ${cat}：${count} 个链接`;
-    }).join('\n')}`;
-    alert(stats);
-}
-    
-    // 监听并初始渲染
     function init() {
         loadPreferences();
         render();
         searchInput.addEventListener('input', onSearchInput);
         themeBtn.addEventListener('click', toggleTheme);
         layoutBtn.addEventListener('click', toggleLayout);
-        // 可选：鼠标悬浮优雅效果已经自带
-        // 若新增网站数组支持动态加入（无需侧边栏，不做编辑面板，保持简洁)
-        initSidebar();  // 添加这一行
     }
-
-    
-    // 启动
     init();
