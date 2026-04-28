@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>我的灵动导航 | 简洁聚合页</title>
-<link rel="stylesheet" href="style.css">
+    
 </head>
+<link rel="stylesheet" href="style.css">
 <body>
 <div class="container">
     <div class="hero">
@@ -24,41 +25,34 @@
         </div>
     </div>
 
-    <!-- 动态分类导航区域 -->
     <div id="categoriesContainer" class="categories">
-        <!-- 通过js动态渲染 -->
         <div class="no-results" style="display: none;">✨ 没有找到相关链接，试试其他关键词吧</div>
     </div>
 
     <div class="footer">
         <p>⚡ 我的专属导航 · 收藏常用站点 | 点击卡片直接访问</p>
     </div>
-
-    <!-- 侧边栏按钮触发器 -->
-<div class="sidebar-trigger" id="sidebarTrigger">
-    <button class="menu-btn">☰ 功能模块</button>
 </div>
 
-<!-- 侧边栏面板 -->
+<!-- 全新侧边栏目录（目录导航，无功能按钮） -->
+<div class="sidebar-trigger" id="sidebarTrigger">
+    <button class="menu-btn">导航</button>
+</div>
+
 <div class="sidebar-panel" id="sidebarPanel">
     <div class="sidebar-header">
-        <h3>⚡ 功能模块</h3>
+        <h3>📖 分类目录</h3>
         <button class="close-sidebar" id="closeSidebar">✕</button>
     </div>
-    <div class="sidebar-content">
-        <!-- 这里放置您的功能模块按钮 -->
-        <button class="func-btn" data-action="bookmark">📖 书签管理</button>
-        <button class="func-btn" data-action="export">📤 导出链接</button>
-        <button class="func-btn" data-action="import">📥 导入链接</button>
-        <button class="func-btn" data-action="clear">🗑️ 清除缓存</button>
-        <button class="func-btn" data-action="stats">📊 使用统计</button>
+    <div class="catalog-container" id="catalogContainer">
+        <!-- 动态渲染目录列表 -->
+        <div style="padding: 20px; text-align:center; color:#aaa;">加载中...</div>
     </div>
 </div>
-
-
- -->
 <div class="sidebar-overlay" id="sidebarOverlay"></div>
-</div>
-<script src="style.js"></script>
+
+<script src="style.js">
+  
+</script>
 </body>
 </html>
