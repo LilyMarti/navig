@@ -11,6 +11,7 @@
         { category: "🎨 设计灵感", title: "Dribbble", description: "顶尖设计师作品集与潮流设计", url: "https://dribbble.com", icon: "🏀" },
         { category: "🎨 设计灵感", title: "Figma 社区", description: "UI/UX 设计协作平台，海量资源", url: "https://www.figma.com/community", icon: "🎨" },
         { category: "🎨 设计灵感", title: "Awwwards", description: "获奖网页设计 showcase", url: "https://www.awwwards.com", icon: "🏆" },
+        { category: "🎨 设计灵感", title: "Chatgpt_signal", description: "获奖网页设计 showcase", url: "https://opennana.com/awesome-prompt-gallery?model=ChatGPT", icon: "🏆" },
         
         { category: "📰 资讯阅读", title: "知乎", description: "中文互联网高质量问答社区", url: "https://www.zhihu.com", icon: "❓" },
         { category: "📰 资讯阅读", title: "Medium", description: "深度优质文章与科技博客", url: "https://medium.com", icon: "📘" },
@@ -24,11 +25,16 @@
 
         { category: "🎮 娱乐影音", title: "YouTube", description: "全球视频分享平台, 学习娱乐", url: "https://www.youtube.com", icon: "📺" },
         { category: "🎮 娱乐影音", title: "Spotify", description: "海量音乐与播客流媒体", url: "https://open.spotify.com", icon: "🎵" },
-        { category: "🎮 娱乐影音", title: "Bilibili", description: "国内知名二次元弹幕视频站", url: "https://www.bilibili.com", icon: "📡" }
+        { category: "🎮 娱乐影音", title: "Bilibili", description: "国内知名二次元弹幕视频站", url: "https://www.bilibili.com", icon: "📡" },
+        { category: "🎮 娱乐影音", title: "gequhai", description: "音乐下载网站", url: "https://www.gequhai.com", icon: "🎵" },
+        { category: "🎮 娱乐影音", title: "yinwe", description: "流行在线听歌网站", url: "https://www.yinwe.com/top", icon: "🎵" },
+       
+       
+
     ];
 
     // 预定义分类顺序 (可扩展)
-    const categoryOrder = ["📌 常用工具", "🎨 设计灵感", "📰 资讯阅读", "💻 开发文档", "🎮 娱乐影音"];
+    const categoryOrder = ["📌 常用工具", "🎨 设计灵感", "📰 资讯阅读", "💻 开发文档", "🎮 娱乐影音","常用导航"];
 
     // 辅助函数: 重新组织分类数据
     function buildCategoryMap(data) {
@@ -114,31 +120,40 @@
         
         // 开始生成HTML
         let html = '';
-        for (const cat of orderedCategories) {
-            const itemCount = cat.items.length;
-            html += `
-                <div class="category" data-category="${escapeHtml(cat.name)}">
-                    <div class="category-header">
-                        <div class="category-title">
-                            ${escapeHtml(cat.name)} <span>${itemCount}</span>
-                        </div>
-                        <div class="count-badge">${itemCount}个站点</div>
-                    </div>
-                    <div class="card-grid" id="grid-${slugify(cat.name)}">
-            `;
-            for (const site of cat.items) {
-                // 卡片内容
-                html += `
-                    <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" class="nav-card">
-                        <div class="card-icon">${escapeHtml(site.icon) || '🔗'}</div>
-                        <div class="card-title">${escapeHtml(site.title)}</div>
-                        <div class="card-desc">${escapeHtml(site.description)}</div>
-                        <div class="card-url">${truncateUrl(site.url)}</div>
-                    </a>
-                `;
-            }
-            html += `</div></div>`;
-        }
+        // 在 render 函数中，生成 html 的地方
+for (const cat of orderedCategories) {
+    const itemCount = cat.items.length;
+    // 生成唯一且安全的 id (基于分类名称)
+    const safeId = cat.name
+        .replace(/[^\w\u4e00-\u9fa5]/g, '-')  // 非字母数字中文替换为 -
+        .replace(/-+/g, '-')                  // 多个 - 合并
+        .replace(/^-|-$/g, '')                // 去掉首尾 -
+        .toLowerCase();
+    const categoryId = `cat-${safeId}`;
+    
+    html += `
+        <div class="category" id="${categoryId}" data-category="${escapeHtml(cat.name)}">
+            <div class="category-header">
+                <div class="category-title">
+                    <a href="#${categoryId}" class="anchor-link" title="跳转到此分类">🔗</a>
+                    ${escapeHtml(cat.name)} <span>${itemCount}</span>
+                </div>
+                <div class="count-badge">${itemCount}个站点</div>
+            </div>
+            <div class="card-grid" id="grid-${slugify(cat.name)}">
+    `;
+    for (const site of cat.items) {
+        html += `
+            <a href="${escapeHtml(site.url)}" target="_blank" rel="noopener noreferrer" class="nav-card">
+                <div class="card-icon">${escapeHtml(site.icon) || '🔗'}</div>
+                <div class="card-title">${escapeHtml(site.title)}</div>
+                <div class="card-desc">${escapeHtml(site.description)}</div>
+                <div class="card-url">${truncateUrl(site.url)}</div>
+            </a>
+        `;
+    }
+    html += `</div></div>`;
+}
         categoriesContainer.innerHTML = html;
         
         // 如果当前是列表视图模式，追加类名到body
@@ -237,6 +252,133 @@
         }
         applyLayoutClass();
     }
+
+    // 侧边栏相关功能
+function initSidebar() {
+    const trigger = document.getElementById('sidebarTrigger');
+    const panel = document.getElementById('sidebarPanel');
+    const overlay = document.getElementById('sidebarOverlay');
+    const closeBtn = document.getElementById('closeSidebar');
+    
+    // 打开侧边栏
+    function openSidebar() {
+        panel.classList.add('open');
+        overlay.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // 关闭侧边栏
+    function closeSidebar() {
+        panel.classList.remove('open');
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+    
+    // 绑定事件
+    if (trigger) {
+        trigger.addEventListener('click', openSidebar);
+    }
+    
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeSidebar);
+    }
+    
+    if (overlay) {
+        overlay.addEventListener('click', closeSidebar);
+    }
+    
+    // 功能按钮的点击事件
+    const funcBtns = document.querySelectorAll('.func-btn');
+    funcBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            const action = this.getAttribute('data-action');
+            handleFunctionAction(action);
+            closeSidebar(); // 执行操作后自动关闭侧边栏（可选）
+        });
+    });
+}
+
+// 处理各个功能模块的具体逻辑
+function handleFunctionAction(action) {
+    switch(action) {
+        case 'bookmark':
+            alert('📖 书签管理功能开发中...\n可以在这里添加收藏当前页面等功能');
+            break;
+        case 'export':
+            exportLinks();
+            break;
+        case 'import':
+            importLinks();
+            break;
+        case 'clear':
+            if(confirm('确定要清除所有本地缓存数据吗？')) {
+                localStorage.clear();
+                alert('缓存已清除，页面将刷新');
+                location.reload();
+            }
+            break;
+        case 'stats':
+            showStats();
+            break;
+        default:
+            console.log('未知功能:', action);
+    }
+}
+
+// 导出链接功能
+function exportLinks() {
+    const data = JSON.stringify(originalSites, null, 2);
+    const blob = new Blob([data], {type: 'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `navigation-links-${new Date().toISOString().slice(0,19)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+    alert('✅ 链接已导出为JSON文件');
+}
+
+// 导入链接功能
+function importLinks() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            try {
+                const imported = JSON.parse(event.target.result);
+                if(Array.isArray(imported)) {
+                    // 合并导入的数据（去重基于url）
+                    const existingUrls = new Set(originalSites.map(s => s.url));
+                    const newSites = imported.filter(site => !existingUrls.has(site.url));
+                    originalSites.push(...newSites);
+                    // 重新渲染
+                    render();
+                    alert(`✅ 成功导入 ${newSites.length} 个新链接！`);
+                } else {
+                    alert('❌ 文件格式错误：需要数组格式');
+                }
+            } catch(err) {
+                alert('❌ 解析失败：无效的JSON文件');
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+// 显示统计信息
+function showStats() {
+    const total = originalSites.length;
+    const categories = new Set(originalSites.map(s => s.category));
+    const stats = `📊 使用统计\n\n总链接数：${total} 个\n分类数量：${categories.size} 个\n\n分类详情：\n${Array.from(categories).map(cat => {
+        const count = originalSites.filter(s => s.category === cat).length;
+        return `  • ${cat}：${count} 个链接`;
+    }).join('\n')}`;
+    alert(stats);
+}
     
     // 监听并初始渲染
     function init() {
@@ -247,7 +389,9 @@
         layoutBtn.addEventListener('click', toggleLayout);
         // 可选：鼠标悬浮优雅效果已经自带
         // 若新增网站数组支持动态加入（无需侧边栏，不做编辑面板，保持简洁)
+        initSidebar();  // 添加这一行
     }
+
     
     // 启动
     init();
